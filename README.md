@@ -1,17 +1,17 @@
-# Architecture: LMS E-Commerce and Video Authorisation
+# LMS e-Commerce and video authorisation: a blueprint
 
-## 1. System Overview
+## 1. System overview
 
 Panopto does not include a native payment gateway or e-commerce engine. As such, all monetisation and transactional workflows must be managed externally. In this architecture, Moodle operates as the storefront (or primary integration point) and access gateway, while Panopto functions strictly as the secure video delivery tier. 
 
 Access to premium video content is governed entirely by Moodle course enrolments passed to Panopto via Learning Tools Interoperability (LTI).
 
-## 2. Sequence Schematic
+## 2. Sequence schematic
 
 <img width="1221" height="595" alt="image" src="https://github.com/user-attachments/assets/ce9b7621-2fad-4c7c-b828-e0b461e21c09" />
 
 
-## 3. Authorisation Data Flow
+## 3. Authorisation data flow
 
 The integration relies on standard LTI standards to handle user provisioning and access control. The step-by-step technical flow is as follows:
 
@@ -21,7 +21,7 @@ The integration relies on standard LTI standards to handle user provisioning and
 4. **Role Synchronisation:** Panopto intercepts the LTI launch, authenticates the user, and automatically inherits the user's Moodle course context. 
 5. **Access Granted:** Panopto applies Role-Based Access Control (RBAC), granting the user 'Viewer' permissions exclusively for the Panopto folder mapped to that specific Moodle course. 
 
-## 4. Supported Deployment Models
+## 4. Supported deployment models
 
 The e-commerce front-end can be architected in two ways, depending on the client's catalogue and marketing requirements.
 
